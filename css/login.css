@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    /* 브라우저 창 크기만큼 */
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: rgb(215, 215, 215) solid 1px;
+    border-radius: 10px;
+}
+
+button {
+    width: 274px;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #3cc7ce;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #19777c;
+}
+
+.signup {
+    color: gray;
+    font-size: 12px;
+    cursor: pointer;
+    transform: color 0.3s ease;
+}
+
+.signup:hover {
+    color: rgb(71, 71, 71);
+}

@@ -1,0 +1,300 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px;
+    font-family: 'Pretendard Variable', sans-serif;
+}
+
+/* --------------- 메인1 --------------- */
+
+/* 이미지 정렬용 */
+main {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main1 {
+    height: 950px;
+}
+
+/* 배경 이미지 겹치도록 설정 */
+.main-ko {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.2;
+    width: 100%;
+    max-width: 900px;
+    z-index: 1;
+}
+
+/* 텍스트: 가운데 위치 + 위에 떠 있게 */
+.firstmain-text {
+    position: relative;
+    z-index: 2;
+    padding: 280px 20px 60px;
+    text-align: center;
+}
+
+/* highlight-text에만 너비 제한 및 엇갈림 적용 */
+.highlight-text {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.highlight-text .large {
+    font-size: 36px;
+    margin: 10px 0;
+    width: fit-content;
+    color: #4B4B4B;
+}
+
+.highlight-text .left {
+    text-align: left;
+    margin-left: 0;
+}
+
+.highlight-text .right {
+    text-align: right;
+    margin-left: auto;
+    margin-bottom: 30px;
+}
+
+/* normal-text는 자유롭게 너비 사용 */
+.normal-text p {
+    font-size: 18px;
+    color: #A5A5A5;
+    margin: 5px 0;
+    text-align: center; /* 필요에 따라 변경 가능 */
+}
+
+.sub {
+    color: #EBBABA;
+}
+
+.border {
+    font-weight: 600;
+    color: #7A7A7A;
+}
+
+
+/* --------------- 메인1 --------------- */
+
+
+/* --------------- 메인2 --------------- */
+
+.main2 {
+    width: 100%;
+    height: 1650px;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 100px 80px;
+}
+
+.article {
+    color: #9E9E9E;
+    font-size: 24px;
+    line-height: 3;
+    text-align: center;
+}
+
+.article.text {
+    max-height: 468px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.article.text .title {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.article.text .sub {
+    gap: 0 63px;
+    color: #9E9E9E;
+}
+
+.article.img img {
+    width: 100%;
+    border-radius: 12px;
+    max-width: 567px;
+    max-height: 468px;
+}
+
+/* --------------- 메인2 --------------- */
+
+
+/* --------------- 메인3 --------------- */
+
+.main3 {
+    width: 100%;
+    height: 1000px;
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas: 
+    "box1 box2"
+    "box3 box4";
+}
+
+.thirdtext {
+    position: absolute; /* 부모 기준으로 위치 지정 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+    z-index: 2;
+    font-size: 36px;
+    color: #4F4F4F;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    text-shadow: 0px 0px 3px white;
+}
+
+.border1 {
+    font-weight: 600;
+}
+
+.item {
+    grid-area: inherit;
+    overflow: hidden;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0.3;
+}
+.box1 {
+    grid-area: box1;
+}
+
+.box2 {
+    grid-area: box2;
+}
+
+.box3 {
+    grid-area: box3;
+}
+
+.box4 {
+    grid-area: box4;
+}
+
+/* --------------- 메인3 --------------- */
+
+
+/* --------------- 메인4 --------------- */
+
+.main4 {
+    width: 100%;
+    padding: 100px 0;
+    background: white;
+    text-align: center;
+}
+
+.main4 p {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    color: #838383;
+}
+
+.gomenu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 266px 186px;
+    grid-template-areas:
+        "box1 box1 box1 box2 box2 box2"
+        "box3 box3 box4 box4 box5 box5";
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.gomenu a {
+    display: flex;
+    flex-direction: column; /* 텍스트 위→아래 쌓임 */
+    align-items: flex-start; /* 가로 왼쪽 정렬 */
+    justify-content: flex-start; /* 세로 위쪽 정렬 */
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #7B7B7B;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-decoration: none; /* 밑줄 제거 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* a 호버 효과 (선택 사항) */
+.gomenu a:hover {
+    background-color: #d6d6d6;
+}
+
+/* 그리드 영역 지정 */
+.box1 { grid-area: box1; }
+.box2 { grid-area: box2; }
+.box3 { grid-area: box3; }
+.box4 { grid-area: box4; }
+.box5 { grid-area: box5; }
+
+/* 박스 배경 및 글자 크기 */
+.lar {
+    background-color: #EBFDFE;
+    font-size: 36px;
+}
+
+.sma {
+    background-color: #e7f9f3;
+    font-size: 32px;
+}
+
+/* gomenu p 스타일 */
+.gomenu p {
+    margin: 10px;
+}
+
+.main4 .detail {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 5px;
+}
+
+.lar-color {
+    color: #5ECBD5;
+}
+
+.sma-color {
+    color: #80BBBD;
+}
+
+/* --------------- 메인4 --------------- */
+
+
+/* --- 애니메이션 --- */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
