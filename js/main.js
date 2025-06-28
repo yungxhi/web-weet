@@ -1,3 +1,10 @@
+function win() {
+    let wini = window.open("Popup.html");
+    if (wini == null) {
+        alert("팝업이 차단되었습니다.")
+    }
+}
+
 // 팝업창 위치 계산
 function getPopupPosition(width, height) {
     // 현재 브라우저 창의 위치를 기준으로 팝업창 위치 계산
@@ -57,3 +64,4 @@ window.addEventListener('DOMContentLoaded', () => {
     resizeIframe(iframe);
     }
 });
+
