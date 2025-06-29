@@ -29,6 +29,10 @@ function loginpopup() {
     );
 }
 
+function loginpopup(url) {
+    window.open(url, "loginPopup", "width=400,height=600,left=100,top=100");
+}
+
 // 팝업창 닫기 (login.html에서도 사용)
 function loginclose() {
     window.close();
@@ -64,4 +68,14 @@ window.addEventListener('DOMContentLoaded', () => {
     resizeIframe(iframe);
     }
 });
+
+function showPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+function loadPage(url) {
+    document.getElementById('mainFrame').src = url;
+}
 

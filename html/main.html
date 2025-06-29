@@ -24,7 +24,7 @@
                 </ul>
             </nav>
             <div class="user-menu">
-                <a onclick="loginpopup('login.html')"><button class="login">로그인/회원가입</button></a>
+                <button class="login" onclick="loginpopup('login.html')">로그인/회원가입</button>
             </div>
         </div>
     </header>
@@ -57,17 +57,6 @@
         </div>
     </div>
 
-    <script src="/js/main.js"></script>
-    <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'flex';
-        }
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-        function loadPage(url) {
-            document.getElementById('mainFrame').src = url;
-        }
-    </script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
