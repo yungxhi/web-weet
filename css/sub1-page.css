@@ -195,7 +195,11 @@ body {
 }
 
 .intro-section {
+<<<<<<< HEAD
     background: url('../images/서브 1 배경2.png') no-repeat center top;
+=======
+    background: url('../images/서브\ 1\ 배경2.png') no-repeat center top;
+>>>>>>> 88a003b1b663ac649593408ef9a378d593c13556
     background-size: 1574px 977px;
     height: 977px;
     width: 100vw;
@@ -520,6 +524,7 @@ body {
     .info-value {
         font-size: 1.5rem;
     }
+<<<<<<< HEAD
 }
 
 /* --------------- 포괄적인 반응형 디자인 --------------- */
@@ -919,4 +924,5 @@ body {
         padding: 10px 15px;
         font-size: 0.85rem;
     }
+
 }
