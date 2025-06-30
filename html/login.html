@@ -1,3 +1,9 @@
+<!--
+  login.html: 로그인/회원가입 팝업
+  - 이름, 비밀번호 입력
+  - 회원가입 링크
+  - 확인(로그인) 버튼
+-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,16 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weet 로그인</title>
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="icon" href="../images/위잇로고.png">
+    <link rel="icon" href="../images/위잇로고.png">
 </head>
 <body>
     <h1>로그인</h1>
     <form>
         <input type="text" id="name" placeholder="아이디를 입력해주세요.">
-
         <input type="password" id="password" placeholder="비밀번호를 입력해주세요.">
         <a href="#" class="signup"><p>회원가입</p></a>
-
         <button onclick="javascript:window.close()">확인</button>
     </form>
 </body>

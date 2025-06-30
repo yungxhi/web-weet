@@ -1,3 +1,10 @@
+<!--
+  home.html: 메인 랜딩 페이지
+  - 인트로(기회, 디지털 격차 메시지)
+  - 격차 설명(이미지+텍스트)
+  - 배움 이미지 그리드
+  - 주요 메뉴 바로가기
+-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,16 +28,16 @@
         </div>
     </div>
 
+    <!-- 격차 설명: 이미지+텍스트 3쌍 -->
     <div class="main2">
-        <!-- 1행 -->
-            <div class="article img fade-in"><img src="../images/전자기기1.png" alt="전자기기"></div>
-            <div class="article text">
-                <p class="title fade-in">소득에 따른 디지털 격차</p>
-                <p class="sub fade-in">미국, 연소득 3만5천 달러 이하 가정의 33%는 가정용 컴퓨터 없음</p>
-                <p class="sub fade-in">한국도 저소득층은 디지털 기기 접근성에서 불리</p>
-            </div>
-
-        <!-- 2행 -->
+        <!-- 1행: 이미지+텍스트 -->
+        <div class="article img fade-in"><img src="../images/전자기기1.png" alt="전자기기"></div>
+        <div class="article text">
+            <p class="title fade-in">소득에 따른 디지털 격차</p>
+            <p class="sub fade-in">미국, 연소득 3만5천 달러 이하 가정의 33%는 가정용 컴퓨터 없음</p>
+            <p class="sub fade-in">한국도 저소득층은 디지털 기기 접근성에서 불리</p>
+        </div>
+        <!-- 2행: 텍스트+이미지 -->
         <div class="article text">
             <p class="title fade-in">지역에 따른 디지털 격차</p>
             <p class="sub fade-in">디지털교과서 기기 보급률, 시도별로 최대 두 배 차이</p>
@@ -39,8 +46,7 @@
         <div class="article img fade-in">
             <img src="../images/시골도시.png" alt="시골도시">
         </div>
-
-        <!-- 3행 -->
+        <!-- 3행: 이미지+텍스트 -->
         <div class="article img fade-in"><img src="../images/초딩1.png" alt="초딩"></div>
         <div class="article text fade-in">
             <p class="title fade-in">디지털 소외 → 학습 격차 심화</p>
@@ -48,25 +54,24 @@
         </div>
     </div>
 
+    <!-- 배움 이미지 그리드 -->
     <div class="main3">
         <div class="item box1">
             <img src="../images/배움1.jpg" alt="초등">
         </div>
-
         <div class="item box2">
             <img src="../images/배움2.jpg" alt="중고등">
         </div>
-
         <div class="item box3">
             <img src="../images/배움3.jpg" alt="대학">
         </div>
-
         <div class="item box4">
             <img src="../images/배움4.jpg" alt="고령">
         </div>
         <div class="thirdtext main-message">지금 필요한 건 <span class="border1 bold-span">누구나 손쉽게 활용</span>할 수 있는 <span class="border1 bold-span">지원 플랫폼</span>입니다.</div>
     </div>
 
+    <!-- 주요 메뉴 바로가기(문제, 지원, 참여, 사례, 문의) -->
     <div class="main4 fade-in">
         <p>주요 메뉴 바로가기</p>
         <div class="gomenu">
@@ -97,11 +102,13 @@
             </a>
         </div>
     </div>
+    <!-- 페이지 로드시 스크롤 맨 위로 -->
     <script>
       window.onload = function() {
         window.scrollTo(0, 0);
       };
     </script>
+    <!-- 홈 전용 JS -->
     <script src="../js/home.js"></script>
 </body>
 </html>

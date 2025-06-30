@@ -1,8 +1,10 @@
+/* 전체 요소 여백 초기화 및 박스 모델 통일 */
 * {
     margin: 0;
     padding: 0;
 }
 
+/* body: 로그인 화면 중앙 정렬, 배경 그라데이션, 폰트 적용 */
 body {
     display: flex;
     flex-direction: column;
@@ -14,6 +16,7 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
+/* 로그인 폼: 카드 형태, 그림자, 반응형 너비 */
 form {
     display: flex;
     flex-direction: column;
@@ -28,6 +31,7 @@ form {
     max-width: 350px;
 }
 
+/* 제목 스타일 */
 h1 {
     margin-bottom: 20px;
     color: #333;
@@ -35,6 +39,7 @@ h1 {
     font-weight: 600;
 }
 
+/* 입력창 스타일: 테두리, 패딩, 반응형 */
 input {
     width: 100%;
     padding: 15px;
@@ -50,6 +55,7 @@ input:focus {
     border-color: #3cc7ce;
 }
 
+/* 버튼: 색상, 호버 효과, 둥근 모서리 */
 button {
     width: 100%;
     font-size: 16px;
@@ -68,6 +74,7 @@ button:hover {
     background-color: #19777c;
 }
 
+/* 회원가입 링크 스타일 */
 .signup {
     color: gray;
     font-size: 12px;
@@ -80,7 +87,7 @@ button:hover {
     color: rgb(71, 71, 71);
 }
 
-/* --------------- 반응형 디자인 --------------- */
+/* ------------------- 반응형 디자인 ------------------- */
 
 /* 태블릿 (768px ~ 1024px) */
 @media (max-width: 1024px) {

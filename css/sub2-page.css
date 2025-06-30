@@ -1,9 +1,11 @@
+/* 전체 요소 여백 초기화 및 박스 모델 통일 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* body: 전체 폰트, 배경 그라데이션, 최소 높이, 색상 등 */
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
     line-height: 1.6;
@@ -13,11 +15,13 @@ body {
     padding: 0;
 }
 
+/* 메인 컨텐츠 패딩 */
 .content {
     padding: 0 20px;
     margin-top: 48px;
 }
 
+/* 각 section 구분: 아래 여백 */
 .section {
     margin-bottom: 48px;
 }
@@ -26,6 +30,7 @@ body {
     margin-top: 28px;
 }
 
+/* section 제목 스타일: 색상, 밑줄, 크기 */
 .section h2 {
     color: #4a5568;
     font-size: 1.5rem;
@@ -35,7 +40,7 @@ body {
     display: inline-block;
 }
 
-/* 인트로 섹션 */
+/* 인트로 섹션: 배경 이미지, 오버레이, 중앙 정렬 */
 .intro-section {
     position: relative;
     width: 100%;
@@ -96,7 +101,7 @@ body {
     font-weight: 600;
 }
 
-/* 정책 그리드 */
+/* 정책 그리드: 반응형, 카드형 */
 .policy-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -155,7 +160,7 @@ body {
     border-left: 3px solid #3cc7ce;
 }
 
-/* 기관 그리드 */
+/* 기관 그리드: 반응형, 카드형 */
 .organization-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

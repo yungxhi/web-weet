@@ -1,9 +1,11 @@
+/* 전체 요소 여백 초기화 및 박스 모델 통일 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* body: 전체 폰트, 배경 그라데이션, 최소 높이, 색상 등 */
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
     line-height: 1.6;
@@ -13,6 +15,7 @@ body {
     padding: 0;
 }
 
+/* 헤더: 상단 검정 배경, 흰색 글씨, 가운데 정렬, 둥근 모서리 */
 .header {
     background: black;
     color: white;
@@ -28,10 +31,12 @@ body {
     margin-bottom: 10px;
 }
 
+/* 메인 컨텐츠 패딩 */
 .content {
     padding: 0 40px;
 }
 
+/* 각 section 구분: 아래 여백 */
 .section {
     margin-bottom: 95px;
 }
@@ -40,6 +45,7 @@ body {
     margin-top: 45px;
 }
 
+/* section 제목 스타일: 색상, 밑줄, 크기 */
 .section h2 {
     color: #4a5568;
     font-size: 1.5rem;
@@ -49,6 +55,7 @@ body {
     display: inline-block;
 }
 
+/* 차트 섹션 제목 중앙 정렬 */
 .chart-section h2 {
     text-align: center;
     display: block;
@@ -57,6 +64,7 @@ body {
     margin-bottom: 40px;
 }
 
+/* 카드형 정보 그리드: 반응형, 간격 */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -91,6 +99,7 @@ body {
     line-height: 1.6;
 }
 
+/* 디지털 격차 정보 그리드 */
 .digital-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -124,6 +133,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* 현황 설명 박스 */
 .current-situation {
     background: white;
     border-radius: 12px;
@@ -145,7 +155,7 @@ body {
 }
 
 .current-situation li::before {
-    content: "•";
+    content: "\2022";
     color: #ff9800;
     font-weight: bold;
     position: absolute;
@@ -153,6 +163,7 @@ body {
     font-size: 1.2rem;
 }
 
+/* 실제 사례 그리드 */
 .real-examples {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -521,7 +532,6 @@ body {
     .info-value {
         font-size: 1.5rem;
     }
-<<<<<<< HEAD
 }
 
 /* --------------- 포괄적인 반응형 디자인 --------------- */

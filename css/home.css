@@ -1,3 +1,4 @@
+/* 전체 요소에 기본 박스 모델, 폰트, 여백 초기화 */
 * {
     padding: 0;
     margin: 0;
@@ -5,14 +6,16 @@
     font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
 
+/* body 전체에 상단 여백 및 기본 폰트 적용 */
 body {
     padding-top: 80px;
     font-family: 'Pretendard Variable', sans-serif;
 }
 
-/* --------------- 메인1 --------------- */
+/* ------------------- 메인1(인트로) ------------------- */
+/* 메인 배경 이미지와 텍스트 배치, 시각적 강조 */
 
-/* 이미지 정렬용 */
+/* 이미지 정렬용: 메인 배경 이미지를 중앙에 흐리게 배치 */
 main {
     display: block;
     justify-content: center;
@@ -21,10 +24,10 @@ main {
 }
 
 .main1 {
-    height: 950px;
+    height: 950px; /* 인트로 영역 높이 */
 }
 
-/* 배경 이미지 겹치도록 설정 */
+/* 배경 이미지가 텍스트 뒤에 흐리게 보이도록 설정 */
 .main-ko {
     position: absolute;
     top: 0;
@@ -36,7 +39,7 @@ main {
     z-index: 1;
 }
 
-/* 텍스트: 가운데 위치 + 위에 떠 있게 */
+/* 텍스트: 가운데 정렬, 위쪽에 띄워서 강조 */
 .firstmain-text {
     position: relative;
     z-index: 2;
@@ -44,7 +47,7 @@ main {
     text-align: center;
 }
 
-/* highlight-text에만 너비 제한 및 엇갈림 적용 */
+/* highlight-text: 강조 텍스트(큰 글씨, 좌/우 정렬) */
 .highlight-text {
     max-width: 550px;
     margin: 0 auto;
@@ -68,7 +71,7 @@ main {
     margin-bottom: 30px;
 }
 
-/* normal-text는 자유롭게 너비 사용 */
+/* normal-text: 설명 텍스트(작은 글씨, 중앙 정렬) */
 .normal-text p {
     font-size: 18px;
     color: #A5A5A5;
@@ -97,10 +100,7 @@ main {
     text-shadow: 0 2px 8px #fff, 0 0 2px #fff;
 }
 
-/* --------------- 메인1 --------------- */
-
-
-/* --------------- 메인2 --------------- */
+/* ------------------- 메인2(격차 설명) ------------------- */
 
 .main2 {
     width: 100%;
@@ -124,7 +124,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .article.text .title {
@@ -145,10 +144,7 @@ main {
     max-height: 468px;
 }
 
-/* --------------- 메인2 --------------- */
-
-
-/* --------------- 메인3 --------------- */
+/* ------------------- 메인3(배움 이미지 그리드) ------------------- */
 
 .main3 {
     width: 100%;
@@ -217,9 +213,6 @@ main {
 .box4 {
     grid-area: box4;
 }
-
-/* --------------- 메인3 --------------- */
-
 
 /* --------------- 메인4 --------------- */
 
@@ -299,9 +292,6 @@ main {
     color: #3cc7ce;
     font-weight: 600;
 }
-
-/* --------------- 메인4 --------------- */
-
 
 /* --- 애니메이션 --- */
 .fade-in {

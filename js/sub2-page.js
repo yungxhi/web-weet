@@ -1,11 +1,12 @@
-// 페이지 로드 시 실행
+// 페이지 로드 시 실행되는 주요 인터랙션 및 애니메이션 처리 스크립트
 document.addEventListener('DOMContentLoaded', function() {
-    // 스크롤 애니메이션 효과
+    // 스크롤 애니메이션 효과를 위한 IntersectionObserver 옵션 설정
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
+    // IntersectionObserver를 사용하여 요소가 화면에 보일 때 애니메이션 적용
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -15,17 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // 애니메이션 대상 요소들
+    // 애니메이션 대상 요소들 선택 (정책카드, 기관카드, 단계, 연락카드)
     const animatedElements = document.querySelectorAll('.policy-card, .org-card, .step, .contact-card');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+        observer.observe(el); // observer 적용
     });
 
-    // 부드러운 스크롤 효과
+    // 부드러운 스크롤(앵커 이동) 효과
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 카드 호버 효과 강화
+    // 카드(정책, 기관, 연락처) hover 효과 강화
     const cards = document.querySelectorAll('.policy-card, .org-card, .contact-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 버튼 클릭 효과
+    // 버튼 클릭 애니메이션 효과
     const buttons = document.querySelectorAll('.action-button');
     buttons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 문의 카드 클릭 이벤트
+    // 연락 카드 클릭 시 정보 복사 및 알림 표시
     const contactCards = document.querySelectorAll('.contact-card');
     contactCards.forEach(card => {
         card.addEventListener('click', function() {
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 알림 표시 함수
+// 알림(토스트) 표시 함수
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.className = 'notification';
@@ -108,12 +109,12 @@ function showNotification(message) {
     
     document.body.appendChild(notification);
     
-    // 애니메이션
+    // 애니메이션: 오른쪽에서 슬라이드 인
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
     
-    // 자동 제거
+    // 3초 후 자동 제거
     setTimeout(() => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => {
@@ -122,13 +123,13 @@ function showNotification(message) {
     }, 3000);
 }
 
-// 스크롤 진행률 표시
+// 스크롤 진행률 바 표시 (상단)
 window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset;
     const docHeight = document.body.offsetHeight - window.innerHeight;
     const scrollPercent = (scrollTop / docHeight) * 100;
     
-    // 스크롤 진행률 바 (선택사항)
+    // 스크롤 진행률 바가 없으면 생성
     let progressBar = document.getElementById('scroll-progress');
     if (!progressBar) {
         progressBar = document.createElement('div');
@@ -146,7 +147,7 @@ window.addEventListener('scroll', function() {
         document.body.appendChild(progressBar);
     }
     
-    progressBar.style.width = scrollPercent + '%';
+    progressBar.style.width = scrollPercent + '%'; // 진행률 반영
 });
 
 // 반응형 네비게이션 (모바일용)
@@ -154,7 +155,7 @@ function initMobileNavigation() {
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     
     if (mediaQuery.matches) {
-        // 모바일에서 추가 기능 구현
+        // 모바일에서 추가 기능 구현: 각 section에 스크롤 애니메이션 적용
         const sections = document.querySelectorAll('.section');
         sections.forEach(section => {
             const observer = new IntersectionObserver(function(entries) {
