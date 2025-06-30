@@ -77,5 +77,6 @@ function closePopup() {
 }
 function loadPage(url) {
     document.getElementById('mainFrame').src = url;
+    window.scrollTo(0, 0);
 }
 

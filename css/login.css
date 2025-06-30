@@ -10,6 +10,8 @@ body {
     height: 100vh; 
     /* 브라우저 창 크기만큼 */
     justify-content: center;
+    font-family: 'Pretendard Variable', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 form {
@@ -18,24 +20,40 @@ form {
     align-items: center;
     gap: 12px;
     margin-top: 20px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 350px;
 }
 
 h1 {
     margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
 }
 
 input {
-    width: 250px;
-    padding: 10px;
+    width: 100%;
+    padding: 15px;
     font-size: 16px;
-    border: rgb(215, 215, 215) solid 1px;
+    border: 2px solid #e0e0e0;
     border-radius: 10px;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3cc7ce;
 }
 
 button {
-    width: 274px;
+    width: 100%;
     font-size: 16px;
-    padding: 10px;
+    padding: 15px;
     margin-top: 20px;
     border: none;
     border-radius: 10px;
@@ -43,6 +61,7 @@ button {
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: 600;
 }
 
 button:hover {
@@ -53,9 +72,119 @@ button:hover {
     color: gray;
     font-size: 12px;
     cursor: pointer;
-    transform: color 0.3s ease;
+    transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .signup:hover {
     color: rgb(71, 71, 71);
+}
+
+/* --------------- 반응형 디자인 --------------- */
+
+/* 태블릿 (768px ~ 1024px) */
+@media (max-width: 1024px) {
+    form {
+        padding: 35px;
+        max-width: 320px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    input {
+        padding: 14px;
+        font-size: 15px;
+    }
+    
+    button {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    form {
+        padding: 30px 25px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    input {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    button {
+        padding: 12px;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+    
+    .signup {
+        font-size: 11px;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+    
+    form {
+        padding: 25px 20px;
+    }
+    
+    h1 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    input {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    button {
+        padding: 10px;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    
+    .signup {
+        font-size: 10px;
+    }
+}
+
+/* 매우 작은 화면 (320px 이하) */
+@media (max-width: 320px) {
+    form {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    input {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    button {
+        padding: 8px;
+        font-size: 12px;
+    }
 }

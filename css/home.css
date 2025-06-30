@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
 
 body {
@@ -84,6 +85,17 @@ main {
     color: #7A7A7A;
 }
 
+.main-message {
+    color: #000 !important;
+    text-shadow: 0 2px 8px #fff, 0 0 2px #fff;
+    font-weight: normal;
+}
+
+.bold-span {
+    font-weight: bold;
+    color: #000 !important;
+    text-shadow: 0 2px 8px #fff, 0 0 2px #fff;
+}
 
 /* --------------- 메인1 --------------- */
 
@@ -145,28 +157,37 @@ main {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-
     grid-template-areas: 
     "box1 box2"
     "box3 box4";
 }
 
 .thirdtext {
-    position: absolute; /* 부모 기준으로 위치 지정 */
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
-    z-index: 2;
-    font-size: 36px;
-    color: #4F4F4F;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 2.2rem;
+    color: #fff;
     text-align: center;
     width: 100%;
-    padding: 0 20px;
-    text-shadow: 0px 0px 3px white;
+    max-width: 100vw;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: none;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-.border1 {
-    font-weight: 600;
+.thirdtext .border1 {
+    color: #fff;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    text-shadow: none;
 }
 
 .item {
@@ -204,86 +225,79 @@ main {
 
 .main4 {
     width: 100%;
-    padding: 100px 0;
-    background: white;
-    text-align: center;
+    background: none;
+    padding: 80px 0 0 0;
+    height: auto;
 }
 
 .main4 p {
-    font-size: 36px;
-    font-weight: bold;
+    font-size: 2.3rem;
+    color: #888;
+    text-align: center;
     margin-bottom: 60px;
-    color: #838383;
+    font-weight: 600;
 }
 
 .gomenu {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 266px 186px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 18px 32px;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    max-width: 1200px;
+    margin: 0 auto;
     grid-template-areas:
         "box1 box1 box1 box2 box2 box2"
         "box3 box3 box4 box4 box5 box5";
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+}
+.gomenu a {
+    border-radius: 20px;
+    padding: 48px 40px 36px 40px;
+    text-decoration: none;
+    color: #4F4F4F;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 4px 24px rgba(80,80,80,0.10);
+    background: #e6f9f7;
+    font-size: 1.15rem;
+    font-weight: 500;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.gomenu a.box1,
+.gomenu a.box2 {
+    background: #e6fcff;
+    min-height: 220px;
+}
+.gomenu a.box3 { grid-area: box3; }
+.gomenu a.box4 { grid-area: box4; }
+.gomenu a.box5 { grid-area: box5; }
+.gomenu a:hover {
+    background: #d2f3f7;
+    transform: none;
+    box-shadow: 0 8px 32px rgba(80,80,80,0.16);
+}
+.lar, .sma {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #555;
+}
+.gomenu p {
+    margin: 4px 0;
     text-align: left;
 }
-
-.gomenu a {
-    display: flex;
-    flex-direction: column; /* 텍스트 위→아래 쌓임 */
-    align-items: flex-start; /* 가로 왼쪽 정렬 */
-    justify-content: flex-start; /* 세로 위쪽 정렬 */
-    padding: 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    color: #7B7B7B;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-decoration: none; /* 밑줄 제거 */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* a 호버 효과 (선택 사항) */
-.gomenu a:hover {
-    background-color: #d6d6d6;
-}
-
-/* 그리드 영역 지정 */
-.box1 { grid-area: box1; }
-.box2 { grid-area: box2; }
-.box3 { grid-area: box3; }
-.box4 { grid-area: box4; }
-.box5 { grid-area: box5; }
-
-/* 박스 배경 및 글자 크기 */
-.lar {
-    background-color: #EBFDFE;
-    font-size: 36px;
-}
-
-.sma {
-    background-color: #e7f9f3;
-    font-size: 32px;
-}
-
-/* gomenu p 스타일 */
-.gomenu p {
-    margin: 10px;
-}
-
 .main4 .detail {
-    font-size: 16px;
+    font-size: 1.08rem;
     font-weight: 400;
-    margin: 5px;
+    color: #9E9E9E;
+    margin-top: 2px;
 }
-
-.lar-color {
-    color: #5ECBD5;
-}
-
-.sma-color {
-    color: #80BBBD;
+.lar-color, .sma-color {
+    color: #3cc7ce;
+    font-weight: 600;
 }
 
 /* --------------- 메인4 --------------- */
@@ -292,9 +306,232 @@ main {
 /* --- 애니메이션 --- */
 .fade-in {
     opacity: 0;
-    transition: opacity 1s ease;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .fade-in.show {
     opacity: 1;
+    transform: translateY(0);
+}
+
+/* --------------- 반응형 디자인 --------------- */
+
+/* 태블릿 (768px ~ 1024px) */
+@media (max-width: 1024px) {
+    .main1 {
+        height: 800px;
+    }
+    
+    .firstmain-text {
+        padding: 200px 20px 40px;
+    }
+    
+    .highlight-text .large {
+        font-size: 28px;
+    }
+    
+    .normal-text p {
+        font-size: 16px;
+    }
+    
+    .main2 {
+        height: auto;
+        padding: 60px 40px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .article.text .title {
+        font-size: 28px;
+    }
+    
+    .article {
+        font-size: 20px;
+    }
+    
+    .main3 {
+        height: 600px;
+    }
+    
+    .thirdtext {
+        font-size: 1.3rem;
+    }
+    
+    .main4 {
+        height: auto;
+        padding: 60px 40px;
+    }
+    
+    .main4 p {
+        font-size: 28px;
+    }
+    
+    .gomenu {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "box1 box2"
+        "box3 box4"
+        "box5 box5";
+    }
+    
+    .lar {
+        font-size: 20px;
+    }
+    
+    .sma {
+        font-size: 18px;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .main1 {
+        height: 600px;
+    }
+    
+    .firstmain-text {
+        padding: 150px 15px 30px;
+    }
+    
+    .highlight-text {
+        max-width: 100%;
+    }
+    
+    .highlight-text .large {
+        font-size: 24px;
+        text-align: center !important;
+        margin: 5px auto;
+    }
+    
+    .normal-text p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    .main2 {
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .article.text .title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .article {
+        font-size: 16px;
+        line-height: 2;
+    }
+    
+    .article.img img {
+        max-height: 300px;
+    }
+    
+    .main3 {
+        height: 340px;
+    }
+    
+    .thirdtext {
+        font-size: 1rem;
+    }
+    
+    .main4 {
+        padding: 40px 20px;
+    }
+    
+    .main4 p {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+    
+    .gomenu {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "box1"
+        "box2"
+        "box3"
+        "box4"
+        "box5";
+        gap: 20px;
+    }
+    
+    .gomenu a {
+        padding: 30px 20px;
+    }
+    
+    .lar {
+        font-size: 18px;
+    }
+    
+    .sma {
+        font-size: 16px;
+    }
+    
+    .main4 .detail {
+        font-size: 14px;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .main1 {
+        height: 500px;
+    }
+    
+    .firstmain-text {
+        padding: 120px 10px 20px;
+    }
+    
+    .highlight-text .large {
+        font-size: 20px;
+    }
+    
+    .normal-text p {
+        font-size: 13px;
+    }
+    
+    .main2 {
+        padding: 30px 15px;
+    }
+    
+    .article.text .title {
+        font-size: 20px;
+    }
+    
+    .article {
+        font-size: 14px;
+    }
+    
+    .main3 {
+        height: 500px;
+    }
+    
+    .thirdtext {
+        font-size: 18px;
+    }
+    
+    .main4 {
+        padding: 30px 15px;
+    }
+    
+    .main4 p {
+        font-size: 20px;
+    }
+    
+    .gomenu a {
+        padding: 25px 15px;
+    }
+    
+    .lar {
+        font-size: 16px;
+    }
+    
+    .sma {
+        font-size: 14px;
+    }
 }

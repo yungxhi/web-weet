@@ -1,0 +1,821 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 0;
+}
+
+.content {
+    padding: 0 20px;
+    margin-top: 48px;
+}
+
+.section {
+    margin-bottom: 48px;
+}
+
+.section:first-of-type {
+    margin-top: 28px;
+}
+
+.section h2 {
+    color: #4a5568;
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #667eea;
+    display: inline-block;
+}
+
+/* 인트로 섹션 */
+.intro-section {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    min-height: unset;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.intro-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 80%;
+    background: url('../images/business-people-shaking-hands-greeting.jpg') center center/cover no-repeat;
+    filter: brightness(0.55) blur(1px);
+    z-index: 1;
+}
+
+.intro-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    height: auto;
+    margin-top: -5vh;
+}
+
+.intro-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+
+.intro-description {
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.highlight {
+    color: #6F93FF;
+    font-weight: 600;
+}
+
+/* 정책 그리드 */
+.policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.policy-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(60,199,206,0.10);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #3cc7ce;
+    margin-bottom: 12px;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(60,199,206,0.15);
+}
+
+.policy-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #3cc7ce;
+}
+
+.policy-card h3 {
+    color: #2d3748;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.policy-card p {
+    color: #4a5568;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.policy-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-item {
+    background: #e0f7fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    border-left: 3px solid #3cc7ce;
+}
+
+/* 기관 그리드 */
+.organization-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.org-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(60,199,206,0.10);
+    transition: transform 0.3s ease;
+}
+
+.org-card:hover {
+    transform: translateY(-3px);
+}
+
+.org-card h3 {
+    color: #2d3748;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #3cc7ce;
+    padding-bottom: 10px;
+}
+
+.org-content p {
+    color: #4a5568;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.org-content ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.org-content li {
+    color: #4a5568;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.org-content li::before {
+    content: "•";
+    color: #3cc7ce;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.org-link {
+    color: #3cc7ce;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.org-link:hover {
+    color: #249ba7;
+    text-decoration: underline;
+}
+
+/* 신청 단계 */
+.application-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.step {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(60,199,206,0.10);
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: #3cc7ce;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 20px;
+}
+
+.step-content h3 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.step-content p {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 문의 정보 */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.contact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 15px rgba(60,199,206,0.10);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #3cc7ce;
+}
+
+.contact-card h3 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-card p {
+    color: #3cc7ce;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contact-time {
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+/* 행동 섹션 */
+.action-section {
+    background: #e0f7fa;
+    border-radius: 12px;
+    padding: 60px 40px;
+    box-shadow: 0 6px 20px rgba(60,199,206,0.10);
+    border: 1px solid #b2ebf2;
+    margin-top: 28px;
+    text-align: center;
+}
+
+.action-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 35px;
+}
+
+.action-description {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 55px;
+}
+
+.action-buttons {
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.action-button {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    margin: 0 4px;
+    letter-spacing: 0.5px;
+}
+
+.button-primary {
+    background: #3cc7ce;
+    color: #fff;
+}
+
+.button-primary:hover {
+    background: #249ba7;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(60,199,206,0.18);
+}
+
+.button-secondary {
+    background: #fff;
+    color: #3cc7ce;
+    border: 2px solid #3cc7ce;
+}
+
+.button-secondary:hover {
+    background: #3cc7ce;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --------------- 반응형 디자인 --------------- */
+
+/* 태블릿 (768px ~ 1024px) */
+@media (max-width: 1024px) {
+    .intro-section {
+        height: 100vh;
+        min-height: unset;
+        margin-bottom: 40px;
+    }
+    .intro-title {
+        font-size: 2.2rem;
+        margin-bottom: 16px;
+    }
+    .intro-description {
+        font-size: 1.05rem;
+        max-width: 95vw;
+    }
+    
+    .content {
+        padding: 0 30px;
+    }
+    
+    .section {
+        margin-bottom: 80px;
+    }
+    
+    .policy-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+    }
+    
+    .organization-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 28px;
+    }
+    
+    .application-steps {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 28px;
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 28px;
+    }
+    
+    .action-section {
+        padding: 60px 20px;
+    }
+    
+    .action-buttons {
+        gap: 28px;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    .intro-section {
+        height: 100vh;
+        min-height: unset;
+        margin-bottom: 24px;
+    }
+    .intro-title {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    .intro-description {
+        font-size: 0.92rem;
+        max-width: 98vw;
+    }
+    
+    .content {
+        padding: 0 12px;
+    }
+    
+    .section {
+        margin-bottom: 48px;
+    }
+    
+    .section:first-of-type {
+        margin-top: 30px;
+    }
+    
+    .section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+    }
+    
+    .policy-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .policy-card {
+        padding: 16px;
+    }
+    
+    .policy-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .policy-card p {
+        font-size: 0.9rem;
+    }
+    
+    .organization-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .org-card {
+        padding: 28px;
+    }
+    
+    .org-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .org-content p {
+        font-size: 0.9rem;
+    }
+    
+    .org-content li {
+        font-size: 0.85rem;
+    }
+    
+    .application-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .step {
+        padding: 14px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .step-content h3 {
+        font-size: 1rem;
+    }
+    
+    .step-content p {
+        font-size: 0.85rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .contact-card {
+        padding: 14px;
+    }
+    
+    .contact-icon {
+        font-size: 2.5rem;
+    }
+    
+    .contact-card h3 {
+        font-size: 1rem;
+    }
+    
+    .contact-card p {
+        font-size: 1rem;
+    }
+    
+    .action-section {
+        padding: 30px 6px;
+    }
+    
+    .action-title {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+    
+    .action-description {
+        font-size: 1rem;
+        margin-bottom: 40px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 14px;
+    }
+    
+    .action-button {
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 0.95rem;
+    }
+    
+    .agency-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+        margin: 2px 2px;
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .intro-section {
+        height: 100vh;
+        min-height: unset;
+    }
+    
+    .intro-title {
+        font-size: 1.8rem;
+    }
+    
+    .intro-description {
+        font-size: 0.8rem;
+    }
+    
+    .content {
+        padding: 0 15px;
+    }
+    
+    .section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .policy-card {
+        padding: 20px;
+    }
+    
+    .org-card {
+        padding: 20px;
+    }
+    
+    .step {
+        padding: 20px;
+    }
+    
+    .contact-card {
+        padding: 20px;
+    }
+    
+    .action-section {
+        padding: 30px 15px;
+    }
+    
+    .action-title {
+        font-size: 1.3rem;
+    }
+    
+    .action-description {
+        font-size: 0.9rem;
+    }
+    
+    .action-button {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .agency-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+        margin: 2px 2px;
+    }
+}
+
+.policy-table-wrapper {
+    margin-bottom: 24px;
+    margin-top: 32px;
+    overflow-x: auto;
+}
+
+.policy-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(60,199,206,0.10);
+    min-width: 700px;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.policy-table th, .policy-table td {
+    border: none;
+    padding: 24px 20px;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.policy-table th {
+    background: #aaf0f4;
+    color: #2d3748;
+    font-weight: 700;
+    font-size: 1.08em;
+    letter-spacing: 0.5px;
+    border-top: none;
+}
+
+.policy-table tr:nth-child(even) td {
+    background: #e6fcfc;
+}
+
+.policy-table tr:nth-child(odd) td {
+    background: #d2f7fa;
+}
+
+.policy-table td {
+    color: #2d3748;
+    font-size: 0.98em;
+    border-bottom: 1.5px solid #b2ebf2;
+    box-shadow: 0 1px 4px rgba(60,199,206,0.04);
+}
+
+.policy-table tr:last-child td {
+    border-bottom: none;
+}
+
+.policy-table td .agency-btn {
+    margin: 0 2px;
+}
+
+.policy-table tbody tr:hover td {
+    background: #a7e6eb;
+    transition: background 0.2s;
+}
+
+.policy-table th:first-child {
+    border-top-left-radius: 16px;
+}
+.policy-table th:last-child {
+    border-top-right-radius: 16px;
+}
+.policy-table tr:last-child td:first-child {
+    border-bottom-left-radius: 16px;
+}
+.policy-table tr:last-child td:last-child {
+    border-bottom-right-radius: 16px;
+}
+
+@media (max-width: 1024px) {
+    .policy-table {
+        font-size: 0.95rem;
+        min-width: 600px;
+    }
+    .policy-table th, .policy-table td {
+        padding: 16px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .policy-table {
+        font-size: 0.9rem;
+        min-width: 500px;
+    }
+    .policy-table th, .policy-table td {
+        padding: 10px 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .policy-table {
+        font-size: 0.85rem;
+        min-width: 400px;
+    }
+    .policy-table th, .policy-table td {
+        padding: 8px 4px;
+    }
+}
+
+.agency-btn {
+    display: inline-block;
+    background: #3cc7ce;
+    color: #fff;
+    font-size: 0.95em;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 6px;
+    margin: 2px 4px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(60,199,206,0.08);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.agency-btn:hover {
+    background: #249ba7;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(60,199,206,0.18);
+}
+
+@media (max-width: 768px) {
+    .agency-btn {
+        font-size: 0.9em;
+        padding: 6px 12px;
+        margin: 2px 2px;
+    }
+}
+
+.faq-section {
+    margin-top: 32px;
+}
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.faq-item {
+    background: #f6fefe;
+    border-radius: 8px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(60,199,206,0.06);
+}
+.faq-q {
+    font-weight: 700;
+    color: #249ba7;
+    margin-bottom: 6px;
+}
+.faq-a {
+    color: #2d3748;
+    font-size: 0.98em;
+}
+
+.more-info-section {
+    margin-top: 32px;
+    background: #e6fcfc;
+    border-radius: 8px;
+    padding: 22px 20px;
+    text-align: center;
+    color: #249ba7;
+    font-size: 1.05em;
+}
+.more-info-section a {
+    color: #3cc7ce;
+    font-weight: 600;
+    text-decoration: underline;
+}
