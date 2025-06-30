@@ -10,3 +10,7 @@ const observer = new IntersectionObserver((entries) => {
 
 elements.forEach(el => observer.observe(el));
 
+
+    function loadPage(url) {
+        document.getElementById('mainFrame').src = url;
+    }

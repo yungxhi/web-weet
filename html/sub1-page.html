@@ -4,297 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>교육 격차와 디지털 소외 - 문제 알아보기</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section h2 {
-            color: #4a5568;
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
-            display: inline-block;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-left: 5px solid #2196f3;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-
-        .card h3 {
-            color: #1565c0;
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .card p {
-            color: #424242;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .digital-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .digital-card {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border-top: 4px solid #9c27b0;
-        }
-
-        .digital-card:hover {
-            transform: scale(1.05);
-        }
-
-        .digital-card h4 {
-            color: #7b1fa2;
-            font-size: 1rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .digital-card p {
-            color: #424242;
-            font-size: 0.9rem;
-        }
-
-        .current-situation {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            border-radius: 12px;
-            padding: 30px;
-            border-left: 5px solid #ff9800;
-        }
-
-        .current-situation ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .current-situation li {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-            color: #424242;
-        }
-
-        .current-situation li::before {
-            content: "•";
-            color: #ff9800;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.2rem;
-        }
-
-        .real-examples {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
-        }
-
-        .example-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e0e0e0;
-        }
-
-        .example-image {
-            width: 100%;
-            height: 200px;
-            background: #f5f5f5;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.9rem;
-            border: 2px dashed #ddd;
-            overflow: hidden;
-        }
-
-        .example-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-
-        .example-text {
-            color: #424242;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            .digital-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            
-            .real-examples {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="../css/sub1-page.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>교육 격차와 디지털 소외 - 문제 알아보기</h1>
+    <!-- 인트로 섹션 -->
+    <div class="intro-section">
+        <div class="intro-overlay">
+            <div class="intro-title">교육 격차와 디지털 소외</div>
+            <div class="intro-subtitle"><span class="white-text">디지털 기술이 모든 것을 바꾸는 시대</span>, <span class="gray-text">모두가 평등하게 접근하고 있지는 않습니다.</span></div>
+            <div class="intro-description">이것이 우리가 <span class="teal-text">디지털 포용을 고민해야하는 이유</span>입니다.</div>
         </div>
-        
-        <div class="content">
-            <!-- 교육 격차의 원인 -->
-            <div class="section">
-                <h2>교육 격차의 원인</h2>
-                <div class="grid">
-                    <div class="card">
-                        <h3>경제적 계층간의 격차</h3>
-                        <p>소득 수준에 따라 교육 기회와 질의 차이가 발생하며, 사교육비 부담 능력의 차이로 인한 교육 불평등이 심화됩니다.</p>
+    </div>
+
+    <div class="content">
+        <!-- 교육 격차 -->
+        <div class="section">
+            <h2>교육 격차란?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>경제적 격차</h3>
+                    <p>소득 수준에 따른 교육 기회의 차이로, 저소득층 학생들이 고품질 교육에 접근하기 어려운 상황입니다.</p>
+                </div>
+                <div class="card">
+                    <h3>지역적 격차</h3>
+                    <p>도시와 농촌 간의 교육 인프라 차이로 인해 발생하는 교육의 질과 기회의 불균형입니다.</p>
+                </div>
+                <div class="card">
+                    <h3>디지털 격차</h3>
+                    <p>디지털 기기와 인터넷 접근성의 차이로 인해 발생하는 교육 기회의 불평등입니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 디지털 소외 -->
+        <div class="section">
+            <h2>디지털 소외의 현실</h2>
+            <div class="digital-grid">
+                <div class="digital-card">
+                    <h4>고령층</h4>
+                    <p>스마트폰과 인터넷 사용에 어려움을 겪는 어르신들이 늘어나고 있습니다.</p>
+                </div>
+                <div class="digital-card">
+                    <h4>저소득층</h4>
+                    <p>경제적 부담으로 인해 디지털 기기를 구매하기 어려운 상황입니다.</p>
+                </div>
+                <div class="digital-card">
+                    <h4>농촌 지역</h4>
+                    <p>인터넷 인프라가 부족하여 온라인 교육과 정보 접근이 제한됩니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 현재 상황 -->
+        <div class="section">
+            <h2>현재 상황</h2>
+            <div class="current-situation">
+                <ul>
+                    <li>코로나19로 인한 원격수업 확산으로 디지털 교육 격차 심화</li>
+                    <li>농촌과 도심지 간 인터넷 인프라 격차로 인한 온라인 교육 접근성 차이</li>
+                    <li>경제적 어려움으로 인한 디지털 기기 보유율 차이</li>
+                    <li>고령층 및 저소득층의 디지털 활용 능력 부족 문제</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 실제 사례 -->
+        <div class="section">
+            <h2>실제 사례</h2>
+            <div class="real-examples">
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="../img/사례1.jpg" alt="컴퓨터나 인터넷이 제한된 환경에서 여러 학생이 하나의 화면을 공유하며 학습하는 모습" />
                     </div>
-                    <div class="card">
-                        <h3>사회 계층간의 격차</h3>
-                        <p>부모의 학력과 사회적 지위에 따른 교육 환경의 차이, 문화 자본의 격차가 자녀의 교육 성취에 영향을 미칩니다.</p>
+                    <div class="example-text">
+                        <strong>컴퓨터나 인터넷이 제한된 환경에서 여러 학생이 하나의 화면을 공유하며 학습하는 모습입니다.</strong>
                     </div>
-                    <div class="card">
-                        <h3>지역 간의거나 격차</h3>
-                        <p>도시와 농촌, 수도권과 지방 간의 교육 인프라와 교육 기회의 차이가 지역별 교육 격차를 만들어냅니다.</p>
+                </div>
+                <div class="example-card">
+                    <div class="example-image">
+                        <img src="../img/사례2.jpg" alt="서울의 노인학습센터에서 디지털 키오스크 사용법을 배우는 어르신들의 모습" />
+                    </div>
+                    <div class="example-text">
+                        <strong>서울의 노인학습센터에서 디지털 키오스크 사용법을 배우는 어르신들의 모습입니다.</strong>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 디지털 소외의 원인 -->
-            <div class="section">
-                <h2>디지털 소외의 원인</h2>
-                <div class="digital-grid">
-                    <div class="digital-card">
-                        <h4>기기 및 인터넷 접근의 어려움</h4>
-                        <p>컴퓨터, 스마트폰 등 디지털 기기 구입비용 부담과 안정적인 인터넷 연결 환경 부족</p>
+        <!-- 차트 섹션 -->
+        <div class="chart-section">
+            <h2>현재 상황은 얼마나 심각할까요?</h2>
+            <div class="chart-container">
+                <div class="chart-title">디지털정보화 수준 격차(2024년)</div>
+                <div class="chart-wrapper">
+                    <canvas id="digitalGapChart"></canvas>
+                </div>
+                
+                <div class="info-boxes">
+                    <div class="info-box">
+                        <span class="info-icon" style="background: #e3f2fd; color: #1976d2;">👴</span>
+                        <div class="info-title">고령층 인터넷 이용률</div>
+                        <div class="info-value">50% 미만</div>
                     </div>
-                    <div class="digital-card">
-                        <h4>디지털 기기 사용 역량 부족</h4>
-                        <p>디지털 기기 조작 방법을 모르거나 인터넷 활용 능력이 부족한 경우</p>
+                    <div class="info-box">
+                        <span class="info-icon" style="background: #e8f5e8; color: #2e7d32;">📱</span>
+                        <div class="info-title">저소득층 스마트폰 보유율</div>
+                        <div class="info-value">70% 이하</div>
                     </div>
-                    <div class="digital-card">
-                        <h4>정보 활용 능력 부족</h4>
-                        <p>필요한 정보를 검색하고 활용하는 능력이 부족하여 디지털 혜택을 누리지 못함</p>
+                    <div class="info-box">
+                        <span class="info-icon" style="background: #e3f2fd; color: #1976d2;">📊</span>
+                        <div class="info-title">전체 평균 스마트폰 보유율</div>
+                        <div class="info-value">90% 이상</div>
                     </div>
+                </div>
+                
+                <div class="social-participation-container">
+                    <div class="social-participation-title">사회 참여와 디지털 역량</div>
+                    <div class="social-participation-subtitle">사회적 2가지 이상 참여한 고령자는</div>
+                    <div class="social-participation-highlight">디지털 문해력 향상 2배</div>
+                    <div class="social-participation-note">(aOR 1.965)</div>
+                    <div class="social-participation-icon">🤝</div>
+                </div>
+                
+                <div class="final-message">
+                    <div class="final-message-text">이건 단순한 기술 문제가 아닌, 삶의 기회에 대한 문제입니다.</div>
                 </div>
             </div>
+        </div>
 
-            <!-- 현황 -->
-            <div class="section">
-                <h2>현황</h2>
-                <div class="current-situation">
-                    <ul>
-                        <li>코로나19로 인한 원격수업 확산으로 디지털 교육 격차 심화</li>
-                        <li>농촌과 도심지 간 인터넷 인프라 격차로 인한 온라인 교육 접근성 차이</li>
-                        <li>경제적 어려움으로 인한 디지털 기기 보유율 차이</li>
-                        <li>고령층 및 저소득층의 디지털 활용 능력 부족 문제</li>
-                    </ul>
-                </div>
+        <!-- 행동 섹션 -->
+        <div class="action-section">
+            <div class="action-title">우리가 함께할 수 있습니다</div>
+            <div class="action-description">
+                누군가에게는 당연한 디지털 환경, 누군가에게는 넘기 힘든 장벽입니다.
             </div>
-
-            <!-- 실제 사례 -->
-            <div class="section">
-                <h2>실제 사례</h2>
-                <div class="real-examples">
-                    <div class="example-card">
-                        <div class="example-image">
-                            <img src="/web-weet-main/img/사례1.jpg" alt="컴퓨터나 인터넷이 제한된 환경에서 여러 학생이 하나의 화면을 공유하며 학습하는 모습" />
-                        </div>
-                        <div class="example-text">
-                            <strong>컴퓨터나 인터넷이 제한된 환경에서 여러 학생이 하나의 화면을 공유하며 학습하는 모습입니다.</strong>
-                        </div>
-                    </div>
-                    <div class="example-card">
-                        <div class="example-image">
-                            <img src="/web-weet-main/img/사례2.jpg" alt="서울의 노인학습센터에서 디지털 키오스크 사용법을 배우는 어르신들의 모습" />
-                        </div>
-                        <div class="example-text">
-                            <strong>서울의 노인학습센터에서 디지털 키오스크 사용법을 배우는 어르신들의 모습입니다.</strong>
-                        </div>
-                    </div>
-                </div>
+            <div class="action-buttons">
+                <a href="sub2-page.html" class="action-button button-primary">지원 방법 알아보기</a>
+                <a href="#" class="action-button button-secondary">참여하고 싶어요</a>
             </div>
         </div>
     </div>
+
+    <script src="../js/sub1-page.js"></script>
 </body>
 </html>
