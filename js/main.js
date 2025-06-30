@@ -62,9 +62,9 @@ function loginclose() {
 window.addEventListener('DOMContentLoaded', () => {
   // 페이지 내 첫 번째 iframe 요소 선택
     const iframe = document.querySelector('iframe');
-  // iframe이 존재하면 높이 자동 조절 함수 실행
+  // iframe이 존재하면 높이 자동 조절 함수 실행 (현재 resizeIframe 미정의로 주석 처리)
     if (iframe) {
-    resizeIframe(iframe);
+    // resizeIframe(iframe);
     }
 });
 
@@ -81,4 +81,25 @@ function loadPage(url) {
     document.getElementById('mainFrame').src = url;
     window.scrollTo(0, 0); // 페이지 이동 시 스크롤 맨 위로 이동
 }
+
+function openLoginModal() {
+  // 팝업 창 크기
+  const width = 400;
+  const height = 500;
+  // 현재 브라우저 창의 위치와 크기
+  const dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+  const dualScreenTop = window.screenTop !== undefined ? window.screenTop : window.screenY;
+  const windowWidth = window.innerWidth || document.documentElement.clientWidth || screen.width;
+  const windowHeight = window.innerHeight || document.documentElement.clientHeight || screen.height;
+  // 중앙 위치 계산
+  const left = dualScreenLeft + (windowWidth - width) / 2;
+  const top = dualScreenTop + (windowHeight - height) / 2;
+  // 팝업 창 열기
+  window.open(
+    'login.html',
+    '로그인/회원가입',
+    `width=${width},height=${height},left=${left},top=${top},scrollbars=yes`
+  );
+}
+window.openLoginModal = openLoginModal;
 

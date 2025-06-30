@@ -13,9 +13,9 @@ const observer = new IntersectionObserver((entries) => {
 elements.forEach(el => observer.observe(el)); // 모든 fade-in 요소에 observer 적용
 
 // iframe의 src를 변경하여 페이지를 동적으로 로드하는 함수
-function loadPage(url) {
-    document.getElementById('mainFrame').src = url;
-}
+    function loadPage(url) {
+        document.getElementById('mainFrame').src = url;
+    }
 
 // 페이지가 로드될 때 스크롤을 맨 위로 올리고, 첫 번째 iframe이 있으면 크기 조절 함수 호출
 window.onload = function() {
