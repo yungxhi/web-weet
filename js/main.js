@@ -46,15 +46,3 @@ function showPopup() {
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
-
-// DOM이 완전히 로드된 후에 실행되는 코드
-window.addEventListener('DOMContentLoaded', () => {
-  // 페이지 내 첫 번째 iframe 요소 선택
-  const iframe = document.querySelector('iframe');
-  // iframe이 존재하면 높이 자동 조절 함수 실행
-  if (iframe) {
-    // 필요시 아래 주석 해제
-    // resizeIframe(iframe);
-  }
-});
-

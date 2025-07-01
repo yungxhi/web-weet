@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         type: 'bar', // 차트 타입: 가로 막대
         data: {
             labels: ['일반 국민', '고령층', '장애인', '농어민', '저소득층'], // 각 그룹 라벨
-            datasets: [{
+            datasets: [{ // 데이터 설정
                 data: [100, 71.4, 83.5, 80, 96.5], // 각 그룹별 수치(%)
                 backgroundColor: [
                     'rgba(102, 126, 234, 0.8)',
